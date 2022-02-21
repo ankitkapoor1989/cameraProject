@@ -9,7 +9,20 @@ function App() {
   const [playing, setPlaying] = useState('Pristine OS');
 
   useEffect(() => {
-    setPlaying(osName)
+    let deviceName = "";
+    if (osName === "iOS") {
+      deviceName = "iPhone"
+    } else if (osName === "Android") {
+      deviceName = "Android"
+    } else if (osName === "Mac OS") {
+      deviceName = "Mac"
+    } else if (osName === "BlackBerry") {
+      deviceName = "BlackBerry"
+    } else {
+      deviceName = "Window"
+    }
+    setPlaying(deviceName);
+    console.log(osName)
   }, [])
 
   const videoConstraints = {
@@ -19,12 +32,13 @@ function App() {
   return (
     <div className="app">
       <div className="app__container">
-      <Webcam 
-        height='65%'
+      <Webcam
+        width='100%'
+        height='100%'
         videoConstraints={videoConstraints}
       />
       </div>
-      <div className="app__deviceName"> Model - {playing}</div>
+      <div className="app__deviceName"> Device - {playing}</div>
     </div>
   );
 }
