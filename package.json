@@ -1,17 +1,23 @@
 {
-  "name": "webcam",
+  "name": "cameraproject",
+  "homepage": "https://Ankit-89.github.io/cameraproject",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "gh-pages": "^3.2.3",
     "mobile-detect": "^1.4.5",
+    "react-device-detect": "^2.1.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "react-scripts": "3.4.4"
+    "react-scripts": "3.4.4",
+    "react-webcam": "^6.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
